@@ -25,5 +25,14 @@ services:
     ports:
       - "8080:80"
 
+  web-service:
+    build: ./web-service
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_started
+
 volumes:
   pgdata:
