@@ -35,13 +35,13 @@ docker exec -it lab-docker-compose-db-1 psql -U postgres -d postgres -c "SELECT 
 
 ⚠️ Проверить работу проекта
 Показать, что таблица в базе существует
-docker exec -it <имя-контейнера-db> psql -U postgres -d postgres -c "\dt"
+docker exec -it lab-docker-compose-db-1 psql -U postgres -d postgres -c "\dt"
 
 Показать логи бэкенда
-docker logs <имя-контейнера-backend> --tail 20
+docker logs lab-docker-compose-db-1 --tail 20
 
 Показать данные внутри таблицы
-docker exec -it <имя-контейнера-db> psql -U postgres -d postgres -c "SELECT * FROM bookings;"
+docker exec -it lab-docker-compose-db-1 psql -U postgres -d postgres -c "SELECT * FROM bookings;"
 
 🛑 Как остановить проект
 docker compose down
